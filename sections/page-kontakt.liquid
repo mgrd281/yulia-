@@ -1,10 +1,11 @@
-{{ 'section-main-page.css' | asset_url | stylesheet_tag }}
+{{ 'section-premium-contact.css' | asset_url | stylesheet_tag }}
 
 {%- style -%}
   .section-{{ section.id }}-padding {
     padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
     padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
   }
+
   @media screen and (min-width: 750px) {
     .section-{{ section.id }}-padding {
       padding-top: {{ section.settings.padding_top }}px;
@@ -13,47 +14,175 @@
   }
 {%- endstyle -%}
 
-<div class="page-width page-width--narrow section-{{ section.id }}-padding">
-  <h1 class="main-page-title page-title h0">Kontakt</h1>
-  <div class="rte">
-    <h2>Wir sind für Sie da</h2>
-    <p>Haben Sie Fragen zu Ihrer Bestellung oder einem Produkt? Unser Support-Team steht Ihnen zur Verfügung.</p>
+<div class="premium-contact section-{{ section.id }}-padding">
+  <div class="page-width">
+    
+    {%- comment -%}Header{%- endcomment -%}
+    <div class="premium-contact__header">
+      <h1 class="premium-contact__title">Kontakt</h1>
+      <p class="premium-contact__subtitle">Wir sind für Sie da. Senden Sie uns eine Nachricht – wir antworten innerhalb von 24–48 Stunden.</p>
+    </div>
 
-    <h3>Support-Zeiten</h3>
-    <ul>
-      <li><strong>Montag – Freitag:</strong> 9:00 – 17:00 Uhr</li>
-      <li><strong>Samstag & Sonntag:</strong> Geschlossen</li>
-    </ul>
+    <div class="premium-contact__grid">
+      
+      {%- comment -%}Left: Contact Info{%- endcomment -%}
+      <div class="premium-contact__info">
+        
+        <div class="premium-contact__info-block">
+          <h2 class="premium-contact__info-title">Support-Zeiten</h2>
+          <ul class="premium-contact__info-list">
+            <li><span class="premium-contact__info-day">Mo – Fr:</span> 9:00 – 17:00 Uhr</li>
+            <li><span class="premium-contact__info-day">Sa & So:</span> Geschlossen</li>
+          </ul>
+        </div>
 
-    <h3>Kontaktmöglichkeiten</h3>
-    <p><strong>E-Mail:</strong><br>
-    <a href="mailto:bytinytales@web.de">bytinytales@web.de</a></p>
+        <div class="premium-contact__info-block">
+          <h2 class="premium-contact__info-title">Direkter Kontakt</h2>
+          <div class="premium-contact__info-item">
+            <svg class="premium-contact__info-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+              <polyline points="22,6 12,13 2,6"/>
+            </svg>
+            <a href="mailto:bytinytales@web.de" class="premium-contact__info-link">bytinytales@web.de</a>
+          </div>
+          <div class="premium-contact__info-item">
+            <svg class="premium-contact__info-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+            </svg>
+            <span>+49 170 731 0173</span>
+          </div>
+        </div>
 
-    <p><strong>Telefon:</strong><br>
-    bytinytales@web.de</p>
+        <div class="premium-contact__info-block">
+          <h2 class="premium-contact__info-title">Adresse</h2>
+          <address class="premium-contact__address">
+            bytinytales<br>
+            Burgstraße 21<br>
+            14467 Potsdam<br>
+            Deutschland
+          </address>
+        </div>
 
-    <p><strong>Adresse:</strong><br>
-    Bytinytales<br>
-    Burgstraße 21<br>
-    14467 Potsdam</p>
+        <div class="premium-contact__hint">
+          <svg class="premium-contact__hint-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <circle cx="12" cy="12" r="10"/>
+            <line x1="12" y1="16" x2="12" y2="12"/>
+            <line x1="12" y1="8" x2="12.01" y2="8"/>
+          </svg>
+          <span>Viele Fragen werden in unserer <a href="/pages/faq">FAQ</a> beantwortet.</span>
+        </div>
 
-    <h3>Antwortzeiten</h3>
-    <ul>
-      <li><strong>E-Mail:</strong> Innerhalb von 24–48 Stunden (Werktage)</li>
-      <li><strong>Telefonisch:</strong> Direkt während der Support-Zeiten</li>
-    </ul>
+      </div>
 
-    <h3>Schon gewusst?</h3>
-    <p>Viele Fragen werden in unserer <a href="/pages/faq">FAQ</a> beantwortet!</p>
+      {%- comment -%}Right: Contact Form{%- endcomment -%}
+      <div class="premium-contact__form-wrapper">
+        {%- form 'contact', id: 'ContactForm', class: 'premium-contact__form' -%}
+          
+          {%- if form.posted_successfully? -%}
+            <div class="premium-contact__success" role="status">
+              <svg class="premium-contact__success-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+                <polyline points="22,4 12,14.01 9,11.01"/>
+              </svg>
+              <p>{{ 'templates.contact.form.post_success' | t }}</p>
+            </div>
+          {%- elsif form.errors -%}
+            <div class="premium-contact__error" role="alert">
+              <p>{{ 'templates.contact.form.error_heading' | t }}</p>
+            </div>
+          {%- endif -%}
 
-    <hr>
-    <p><small>Stand: Februar 2026 | bytinytes</small></p>
+          <div class="premium-contact__field-group">
+            <div class="premium-contact__field">
+              <label class="premium-contact__label" for="ContactForm-name">Name</label>
+              <input
+                type="text"
+                id="ContactForm-name"
+                name="contact[{{ 'templates.contact.form.name' | t }}]"
+                class="premium-contact__input"
+                value="{% if form.name %}{{ form.name }}{% elsif customer %}{{ customer.name }}{% endif %}"
+                placeholder="Ihr Name"
+                autocomplete="name"
+              >
+            </div>
+
+            <div class="premium-contact__field{% if form.errors contains 'email' %} premium-contact__field--error{% endif %}">
+              <label class="premium-contact__label" for="ContactForm-email">
+                E-Mail <span class="premium-contact__required">*</span>
+              </label>
+              <input
+                type="email"
+                id="ContactForm-email"
+                name="contact[email]"
+                class="premium-contact__input"
+                value="{% if form.email %}{{ form.email }}{% elsif customer %}{{ customer.email }}{% endif %}"
+                placeholder="ihre@email.de"
+                autocomplete="email"
+                required
+                aria-required="true"
+                {% if form.errors contains 'email' %}aria-invalid="true"{% endif %}
+              >
+              {%- if form.errors contains 'email' -%}
+                <span class="premium-contact__error-text">{{ form.errors.messages.email }}</span>
+              {%- endif -%}
+            </div>
+          </div>
+
+          <div class="premium-contact__field">
+            <label class="premium-contact__label" for="ContactForm-phone">Telefon (optional)</label>
+            <input
+              type="tel"
+              id="ContactForm-phone"
+              name="contact[{{ 'templates.contact.form.phone' | t }}]"
+              class="premium-contact__input"
+              value="{% if form.phone %}{{ form.phone }}{% elsif customer %}{{ customer.phone }}{% endif %}"
+              placeholder="+49 123 456789"
+              autocomplete="tel"
+              pattern="[0-9\-\+\s\(\)]*"
+            >
+          </div>
+
+          <div class="premium-contact__field">
+            <label class="premium-contact__label" for="ContactForm-body">
+              Nachricht <span class="premium-contact__required">*</span>
+            </label>
+            <textarea
+              id="ContactForm-body"
+              name="contact[{{ 'templates.contact.form.comment' | t }}]"
+              class="premium-contact__textarea"
+              rows="6"
+              placeholder="Wie können wir Ihnen helfen?"
+              required
+              aria-required="true"
+            >{{ form.body }}</textarea>
+          </div>
+
+          <button type="submit" class="premium-contact__submit">
+            <span>Nachricht senden</span>
+            <svg class="premium-contact__submit-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <line x1="22" y1="2" x2="11" y2="13"/>
+              <polygon points="22,2 15,22 11,13 2,9 22,2"/>
+            </svg>
+          </button>
+
+          <p class="premium-contact__trust">
+            <svg class="premium-contact__trust-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+              <path d="M9 12l2 2 4-4"/>
+            </svg>
+            <span>Deine Daten werden vertraulich behandelt.</span>
+          </p>
+
+        {%- endform -%}
+      </div>
+
+    </div>
   </div>
 </div>
 
 {% schema %}
 {
-  "name": "Seite: Kontakt",
+  "name": "Premium Kontakt",
   "tag": "section",
   "class": "section",
   "settings": [
@@ -65,7 +194,7 @@
       "step": 4,
       "unit": "px",
       "label": "Abstand oben",
-      "default": 36
+      "default": 60
     },
     {
       "type": "range",
@@ -75,7 +204,7 @@
       "step": 4,
       "unit": "px",
       "label": "Abstand unten",
-      "default": 36
+      "default": 80
     }
   ]
 }
