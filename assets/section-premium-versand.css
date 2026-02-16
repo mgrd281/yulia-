@@ -1,0 +1,395 @@
+/**
+ * Premium Versand & Lieferung CSS
+ * Modern shipping info with FAQ accordion
+ */
+
+/* ============================================
+   BASE CONTAINER
+   ============================================ */
+.premium-versand {
+  --versand-text: #1a1a1a;
+  --versand-muted: #666666;
+  --versand-border: rgba(0, 0, 0, 0.12);
+  --versand-accent: #1a1a1a;
+  --versand-success: #22c55e;
+  --versand-radius: 16px;
+  --versand-bg: rgba(0, 0, 0, 0.02);
+  
+  color: var(--versand-text);
+}
+
+/* ============================================
+   HEADER
+   ============================================ */
+.premium-versand__header {
+  text-align: center;
+  max-width: 600px;
+  margin: 0 auto 3rem;
+}
+
+.premium-versand__title {
+  font-size: 2rem;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+  margin: 0 0 0.75rem;
+  color: var(--versand-text);
+}
+
+.premium-versand__subtitle {
+  font-size: 1.0625rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: var(--versand-muted);
+  margin: 0;
+}
+
+@media screen and (max-width: 749px) {
+  .premium-versand__header {
+    margin-bottom: 2rem;
+    text-align: left;
+  }
+  
+  .premium-versand__title {
+    font-size: 1.75rem;
+  }
+  
+  .premium-versand__subtitle {
+    font-size: 1rem;
+  }
+}
+
+/* ============================================
+   TWO-COLUMN GRID
+   ============================================ */
+.premium-versand__grid {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 4rem;
+  max-width: 1100px;
+  margin: 0 auto;
+  align-items: start;
+}
+
+@media screen and (max-width: 989px) {
+  .premium-versand__grid {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+}
+
+/* ============================================
+   LEFT: INFO SIDEBAR
+   ============================================ */
+.premium-versand__info {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.premium-versand__info-block {
+  padding-bottom: 2rem;
+  border-bottom: 1px solid var(--versand-border);
+}
+
+.premium-versand__info-block:last-of-type {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.premium-versand__info-title {
+  font-size: 0.875rem;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  color: var(--versand-muted);
+  margin: 0 0 1rem;
+}
+
+/* Shipping Options */
+.premium-versand__option {
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 1.25rem;
+  margin-bottom: 1rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+.premium-versand__option:last-child {
+  margin-bottom: 0;
+}
+
+.premium-versand__option--highlight {
+  background: rgba(34, 197, 94, 0.08);
+  border: 1px solid rgba(34, 197, 94, 0.2);
+}
+
+.premium-versand__option-header {
+  display: flex;
+  align-items: center;
+  gap: 0.875rem;
+  margin-bottom: 0.5rem;
+}
+
+.premium-versand__option-icon {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--versand-bg);
+  border-radius: 10px;
+  color: var(--versand-muted);
+}
+
+.premium-versand__option--highlight .premium-versand__option-icon {
+  background: rgba(34, 197, 94, 0.15);
+  color: var(--versand-success);
+}
+
+.premium-versand__option-icon svg {
+  width: 22px;
+  height: 22px;
+}
+
+.premium-versand__option-meta {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.premium-versand__option-meta h3 {
+  font-size: 1rem;
+  font-weight: 600;
+  margin: 0;
+  color: var(--versand-text);
+}
+
+.premium-versand__option-price {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: var(--versand-text);
+}
+
+.premium-versand__option-badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.25rem 0.625rem;
+  background: var(--versand-success);
+  color: #ffffff;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  border-radius: 6px;
+}
+
+.premium-versand__option-desc {
+  font-size: 0.9375rem;
+  color: var(--versand-muted);
+  margin: 0.5rem 0 0 3.375rem;
+  line-height: 1.4;
+}
+
+/* Regions */
+.premium-versand__regions {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.premium-versand__region {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.premium-versand__region-flag {
+  font-size: 1.75rem;
+}
+
+.premium-versand__region-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.premium-versand__region-info strong {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--versand-text);
+}
+
+.premium-versand__region-info span {
+  font-size: 0.9375rem;
+  color: var(--versand-muted);
+}
+
+/* Partners */
+.premium-versand__partners {
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.premium-versand__partner {
+  padding: 0.5rem 1rem;
+  background: #ffffff;
+  border-radius: 8px;
+  font-size: 0.9375rem;
+  font-weight: 500;
+  color: var(--versand-text);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+/* Hint box */
+.premium-versand__hint {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  padding: 1rem;
+  background: var(--versand-bg);
+  border-radius: 12px;
+  font-size: 0.9375rem;
+  line-height: 1.5;
+  color: var(--versand-muted);
+}
+
+.premium-versand__hint-icon {
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+
+/* ============================================
+   RIGHT: FAQ ACCORDION
+   ============================================ */
+.premium-versand__faq-wrapper {
+  background: var(--versand-bg);
+  border-radius: var(--versand-radius);
+  padding: 2rem;
+}
+
+@media screen and (max-width: 749px) {
+  .premium-versand__faq-wrapper {
+    padding: 1.5rem;
+    border-radius: 12px;
+  }
+}
+
+.premium-versand__faq-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin: 0 0 1.5rem;
+  color: var(--versand-text);
+}
+
+.premium-versand__faq-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+/* FAQ Item */
+.premium-versand__faq-item {
+  background: #ffffff;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+.premium-versand__faq-question {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1.25rem;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--versand-text);
+  list-style: none;
+  transition: background 0.2s;
+}
+
+.premium-versand__faq-question:hover {
+  background: rgba(0, 0, 0, 0.02);
+}
+
+.premium-versand__faq-question::-webkit-details-marker {
+  display: none;
+}
+
+.premium-versand__faq-icon {
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.premium-versand__faq-item[open] .premium-versand__faq-icon {
+  transform: rotate(180deg);
+}
+
+.premium-versand__faq-answer {
+  padding: 0 1.25rem 1.25rem;
+}
+
+.premium-versand__faq-answer p {
+  margin: 0;
+  font-size: 0.9375rem;
+  line-height: 1.6;
+  color: var(--versand-muted);
+}
+
+/* CTA Button */
+.premium-versand__cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 1.5rem;
+  padding: 0.875rem 1.5rem;
+  background: var(--versand-accent);
+  color: #ffffff;
+  font-size: 0.9375rem;
+  font-weight: 600;
+  text-decoration: none;
+  border-radius: 14px;
+  box-shadow: 0 2px 4px -1px rgba(0, 0, 0, 0.1);
+  transition: 
+    transform 0.2s cubic-bezier(0.4, 0, 0.2, 1),
+    box-shadow 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.premium-versand__cta:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+.premium-versand__cta-icon {
+  width: 18px;
+  height: 18px;
+}
+
+/* ============================================
+   ACCESSIBILITY
+   ============================================ */
+.premium-versand__faq-question:focus-visible,
+.premium-versand__cta:focus-visible {
+  outline: 2px solid var(--versand-accent);
+  outline-offset: 2px;
+}
+
+/* ============================================
+   REDUCED MOTION
+   ============================================ */
+@media (prefers-reduced-motion: reduce) {
+  .premium-versand__faq-icon,
+  .premium-versand__cta {
+    transition: none;
+  }
+  
+  .premium-versand__cta:hover {
+    transform: none;
+  }
+}

@@ -1,0 +1,275 @@
+{{ 'section-premium-versand.css' | asset_url | stylesheet_tag }}
+
+{%- style -%}
+  .section-{{ section.id }}-padding {
+    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+  }
+
+  @media screen and (min-width: 750px) {
+    .section-{{ section.id }}-padding {
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+  }
+{%- endstyle -%}
+
+<div class="premium-versand section-{{ section.id }}-padding color-{{ section.settings.color_scheme }}">
+  <div class="page-width">
+    
+    {%- if section.settings.heading != blank -%}
+      <div class="premium-versand__header">
+        <h1 class="premium-versand__title">{{ section.settings.heading | escape }}</h1>
+        <p class="premium-versand__subtitle">Schneller und zuverlässiger Versand innerhalb Deutschlands und der EU.</p>
+      </div>
+    {%- endif -%}
+
+    <div class="premium-versand__grid">
+      
+      {%- comment -%}Left: Info{%- endcomment -%}
+      <div class="premium-versand__info">
+        
+        <div class="premium-versand__info-block">
+          <h2 class="premium-versand__info-title">Versandoptionen</h2>
+          
+          <div class="premium-versand__option">
+            <div class="premium-versand__option-header">
+              <span class="premium-versand__option-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <rect x="2" y="7" width="20" height="14" rx="2"/>
+                  <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/>
+                </svg>
+              </span>
+              <div class="premium-versand__option-meta">
+                <h3>Standardversand</h3>
+                <span class="premium-versand__option-price">3,90 €</span>
+              </div>
+            </div>
+            <p class="premium-versand__option-desc">Lieferung innerhalb 3-5 Werktagen</p>
+          </div>
+
+          <div class="premium-versand__option">
+            <div class="premium-versand__option-header">
+              <span class="premium-versand__option-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <circle cx="12" cy="12" r="10"/>
+                  <polyline points="12,6 12,12 16,14"/>
+                </svg>
+              </span>
+              <div class="premium-versand__option-meta">
+                <h3>Expressversand</h3>
+                <span class="premium-versand__option-price">7,90 €</span>
+              </div>
+            </div>
+            <p class="premium-versand__option-desc">Lieferung innerhalb 1-2 Werktagen</p>
+          </div>
+
+          <div class="premium-versand__option premium-versand__option--highlight">
+            <div class="premium-versand__option-header">
+              <span class="premium-versand__option-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+                  <polyline points="22,4 12,14.01 9,11.01"/>
+                </svg>
+              </span>
+              <div class="premium-versand__option-meta">
+                <h3>Kostenloser Versand</h3>
+                <span class="premium-versand__option-badge">Ab 50 €</span>
+              </div>
+            </div>
+            <p class="premium-versand__option-desc">Ab einem Bestellwert von 50 € versenden wir kostenlos</p>
+          </div>
+        </div>
+
+        <div class="premium-versand__info-block">
+          <h2 class="premium-versand__info-title">Lieferzeiten</h2>
+          <div class="premium-versand__regions">
+            <div class="premium-versand__region">
+              <span class="premium-versand__region-flag">🇩🇪</span>
+              <div class="premium-versand__region-info">
+                <strong>Deutschland</strong>
+                <span>3-5 Werktage</span>
+              </div>
+            </div>
+            <div class="premium-versand__region">
+              <span class="premium-versand__region-flag">🇪🇺</span>
+              <div class="premium-versand__region-info">
+                <strong>EU-Länder</strong>
+                <span>5-10 Werktage</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="premium-versand__info-block">
+          <h2 class="premium-versand__info-title">Versandpartner</h2>
+          <div class="premium-versand__partners">
+            <span class="premium-versand__partner">DHL</span>
+            <span class="premium-versand__partner">DPD</span>
+            <span class="premium-versand__partner">Hermes</span>
+          </div>
+        </div>
+
+        <div class="premium-versand__hint">
+          <svg class="premium-versand__hint-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <circle cx="12" cy="12" r="10"/>
+            <line x1="12" y1="16" x2="12" y2="12"/>
+            <line x1="12" y1="8" x2="12.01" y2="8"/>
+          </svg>
+          <span>Sie erhalten eine E-Mail mit Tracking-Link, sobald Ihre Bestellung versendet wurde.</span>
+        </div>
+
+      </div>
+
+      {%- comment -%}Right: FAQ Accordion{%- endcomment -%}
+      <div class="premium-versand__faq-wrapper">
+        <h2 class="premium-versand__faq-title">Häufige Fragen</h2>
+        
+        <div class="premium-versand__faq-list">
+          
+          <details class="premium-versand__faq-item">
+            <summary class="premium-versand__faq-question">
+              <span>Wie lange dauert der Versand?</span>
+              <svg class="premium-versand__faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <polyline points="6,9 12,15 18,9"/>
+              </svg>
+            </summary>
+            <div class="premium-versand__faq-answer">
+              <p>Innerhalb Deutschlands liefern wir in 3-5 Werktagen. Bei Expressversand erreicht Sie Ihre Bestellung in 1-2 Werktagen.</p>
+            </div>
+          </details>
+
+          <details class="premium-versand__faq-item">
+            <summary class="premium-versand__faq-question">
+              <span>Wo kann ich meine Bestellung verfolgen?</span>
+              <svg class="premium-versand__faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <polyline points="6,9 12,15 18,9"/>
+              </svg>
+            </summary>
+            <div class="premium-versand__faq-answer">
+              <p>Nach dem Versand erhalten Sie eine E-Mail mit Tracking-Nummer. Sie können Ihre Sendung jederzeit auf der Website des Versanddienstleisters verfolgen.</p>
+            </div>
+          </details>
+
+          <details class="premium-versand__faq-item">
+            <summary class="premium-versand__faq-question">
+              <span>Liefern Sie ins Ausland?</span>
+              <svg class="premium-versand__faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <polyline points="6,9 12,15 18,9"/>
+              </svg>
+            </summary>
+            <div class="premium-versand__faq-answer">
+              <p>Ja, wir liefern in alle EU-Länder. Die Lieferzeit beträgt 5-10 Werktage. Versandkosten ins Ausland: 6,90 € (Standard) bzw. 12,90 € (Express).</p>
+            </div>
+          </details>
+
+          <details class="premium-versand__faq-item">
+            <summary class="premium-versand__faq-question">
+              <span>Kann ich die Lieferadresse ändern?</span>
+              <svg class="premium-versand__faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <polyline points="6,9 12,15 18,9"/>
+              </svg>
+            </summary>
+            <div class="premium-versand__faq-answer">
+              <p>Solange Ihre Bestellung noch nicht versendet wurde, können Sie die Adresse ändern. Kontaktieren Sie uns dazu schnellstmöglich per E-Mail.</p>
+            </div>
+          </details>
+
+          <details class="premium-versand__faq-item">
+            <summary class="premium-versand__faq-question">
+              <span>Was passiert, wenn ich nicht zu Hause bin?</span>
+              <svg class="premium-versand__faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <polyline points="6,9 12,15 18,9"/>
+              </svg>
+            </summary>
+            <div class="premium-versand__faq-answer">
+              <p>Der Zusteller hinterlässt eine Benachrichtigung. Sie können die Lieferung neu terminieren oder eine Filiale/Abholstation wählen.</p>
+            </div>
+          </details>
+
+        </div>
+
+        <a href="/pages/kontakt" class="premium-versand__cta">
+          <span>Frage zum Versand?</span>
+          <svg class="premium-versand__cta-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <line x1="5" y1="12" x2="19" y2="12"/>
+            <polyline points="12,5 19,12 12,19"/>
+          </svg>
+        </a>
+
+      </div>
+
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Versand & Lieferung",
+  "tag": "section",
+  "class": "section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "default": "Versand & Lieferung",
+      "label": "Überschrift"
+    },
+    {
+      "type": "select",
+      "id": "heading_size",
+      "options": [
+        {
+          "value": "h2",
+          "label": "t:sections.all.heading_size.options__1.label"
+        },
+        {
+          "value": "h1",
+          "label": "t:sections.all.heading_size.options__2.label"
+        },
+        {
+          "value": "h0",
+          "label": "t:sections.all.heading_size.options__3.label"
+        }
+      ],
+      "default": "h1",
+      "label": "t:sections.all.heading_size.label"
+    },
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "t:sections.all.colors.label",
+      "default": "scheme-1"
+    },
+    {
+      "type": "header",
+      "content": "t:sections.all.spacing"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_top",
+      "default": 36
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_bottom",
+      "default": 36
+    }
+  ],
+  "presets": [
+    {
+      "name": "Versand & Lieferung"
+    }
+  ]
+}
+{% endschema %}

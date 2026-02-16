@@ -1,8 +1,9 @@
 {
   "sections": {
     "main": {
-      "type": "page-versand",
+      "type": "versand-lieferung",
       "settings": {
+        "heading": "Versand & Lieferung",
         "padding_top": 36,
         "padding_bottom": 36
       }
