@@ -1,0 +1,82 @@
+{{ 'section-main-page.css' | asset_url | stylesheet_tag }}
+
+{%- style -%}
+  .section-{{ section.id }}-padding {
+    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+  }
+  @media screen and (min-width: 750px) {
+    .section-{{ section.id }}-padding {
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+  }
+{%- endstyle -%}
+
+<div class="page-width page-width--narrow section-{{ section.id }}-padding">
+  <h1 class="main-page-title page-title h0">Kontakt</h1>
+  <div class="rte">
+    <h2>Wir sind für Sie da</h2>
+    <p>Haben Sie Fragen zu Ihrer Bestellung oder einem Produkt? Unser Support-Team steht Ihnen zur Verfügung.</p>
+
+    <h3>Support-Zeiten</h3>
+    <ul>
+      <li><strong>Montag – Freitag:</strong> 9:00 – 17:00 Uhr</li>
+      <li><strong>Samstag & Sonntag:</strong> Geschlossen</li>
+    </ul>
+
+    <h3>Kontaktmöglichkeiten</h3>
+    <p><strong>E-Mail:</strong><br>
+    <a href="mailto:[BITTE EINTRAGEN]">[BITTE EINTRAGEN]</a></p>
+
+    <p><strong>Telefon:</strong><br>
+    [BITTE EINTRAGEN]</p>
+
+    <p><strong>Adresse:</strong><br>
+    [BITTE EINTRAGEN: Firma]<br>
+    [BITTE EINTRAGEN: Straße Nr.]<br>
+    [BITTE EINTRAGEN: PLZ Ort]</p>
+
+    <h3>Antwortzeiten</h3>
+    <ul>
+      <li><strong>E-Mail:</strong> Innerhalb von 24–48 Stunden (Werktage)</li>
+      <li><strong>Telefonisch:</strong> Direkt während der Support-Zeiten</li>
+    </ul>
+
+    <h3>Schon gewusst?</h3>
+    <p>Viele Fragen werden in unserer <a href="/pages/faq">FAQ</a> beantwortet!</p>
+
+    <hr>
+    <p><small>Stand: [DATUM EINTRAGEN] | bytinytes</small></p>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Seite: Kontakt",
+  "tag": "section",
+  "class": "section",
+  "settings": [
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "Abstand oben",
+      "default": 36
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "Abstand unten",
+      "default": 36
+    }
+  ]
+}
+{% endschema %}

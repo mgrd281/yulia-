@@ -1,0 +1,90 @@
+{{ 'section-main-page.css' | asset_url | stylesheet_tag }}
+
+{%- style -%}
+  .section-{{ section.id }}-padding {
+    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+  }
+  @media screen and (min-width: 750px) {
+    .section-{{ section.id }}-padding {
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+  }
+{%- endstyle -%}
+
+<div class="page-width page-width--narrow section-{{ section.id }}-padding">
+  <h1 class="main-page-title page-title h0">Häufig gestellte Fragen (FAQ)</h1>
+  <div class="rte">
+    <h2>Versand & Lieferung</h2>
+
+    <h3>Wie lange dauert der Versand?</h3>
+    <p>Innerhalb Deutschlands: <strong>2–5 Werktage</strong>.</p>
+
+    <h3>Von wo wird versendet?</h3>
+    <p>Alle Artikel werden <strong>direkt aus Deutschland</strong> versandt.</p>
+
+    <h2>Rückgabe & Umtausch</h2>
+
+    <h3>Wie lange habe ich Zeit für eine Rückgabe?</h3>
+    <p>Sie haben <strong>14 Tage</strong> ab Erhalt der Ware Zeit. Details: <a href="/pages/widerrufsrecht">Widerrufsrecht</a></p>
+
+    <h2>Zahlung & Sicherheit</h2>
+
+    <h3>Welche Zahlungsarten bietet ihr an?</h3>
+    <p>PayPal, Klarna (Rechnung, Sofort, Ratenkauf), Kreditkarte (Visa, Mastercard), Apple Pay.</p>
+
+    <h2>Produkte – Uhren & LEGO</h2>
+
+    <h3>Sind die Uhren Originalware?</h3>
+    <p>Ja, alle Uhren sind <strong>100% Originalware</strong> mit Originalbox.</p>
+
+    <h3>Sind LEGO-Sets versiegelt?</h3>
+    <p>Ja, alle LEGO-Sets sind <strong>originalversiegelt (OVP)</strong>.</p>
+
+    <h2>Produkte – Games</h2>
+
+    <h3>Sind die Games für die deutsche Region?</h3>
+    <p>Ja, deutsche/EU-Version mit deutscher Sprache.</p>
+
+    <h3>Wie erhalte ich meinen Game Key?</h3>
+    <p>Per E-Mail innerhalb weniger Minuten bis 24 Stunden nach Zahlung.</p>
+
+    <h2>Noch Fragen?</h2>
+    <p>E-Mail: <a href="mailto:[BITTE EINTRAGEN]">[BITTE EINTRAGEN]</a><br>
+    Telefon: [BITTE EINTRAGEN]</p>
+
+    <hr>
+    <p><small>Stand: [DATUM EINTRAGEN] | bytinytes</small></p>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Seite: FAQ",
+  "tag": "section",
+  "class": "section",
+  "settings": [
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "Abstand oben",
+      "default": 36
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "Abstand unten",
+      "default": 36
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,85 @@
+{{ 'section-main-page.css' | asset_url | stylesheet_tag }}
+
+{%- style -%}
+  .section-{{ section.id }}-padding {
+    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+  }
+  @media screen and (min-width: 750px) {
+    .section-{{ section.id }}-padding {
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+  }
+{%- endstyle -%}
+
+<div class="page-width page-width--narrow section-{{ section.id }}-padding">
+  <h1 class="main-page-title page-title h0">Über uns</h1>
+  <div class="rte">
+    <h2>Wer ist bytinytes?</h2>
+    <p><strong>bytinytes</strong> ist Ihr vertrauensvoller Partner für ausgewählte Produkte in den Bereichen Uhren, LEGO®, Games und digitale Inhalte. Wir bieten Originalware von höchster Qualität zu fairen Preisen.</p>
+
+    <h2>Unser Versprechen</h2>
+
+    <h3>Vertrauen durch Echtheit</h3>
+    <p>Bei uns kaufen Sie ausschließlich <strong>Originalware</strong>. Jedes Produkt stammt aus verifizierten Quellen.</p>
+
+    <h3>Versand aus Deutschland</h3>
+    <p>Alle Artikel werden <strong>direkt aus Deutschland</strong> versandt – schnell und ohne Zoll.</p>
+
+    <h3>Geprüfte Qualität</h3>
+    <p>Jedes Produkt wird vor dem Versand auf Vollständigkeit und einwandfreien Zustand geprüft.</p>
+
+    <h2>Warum bytinytes?</h2>
+    <ul>
+      <li>100% Originalware</li>
+      <li>2–5 Werktage Lieferzeit (DE)</li>
+      <li>SSL-verschlüsselte Zahlung</li>
+      <li>Kompetenter Support Mo–Fr</li>
+    </ul>
+
+    <h2>Unser Serviceversprechen</h2>
+    <ul>
+      <li>14 Tage Widerrufsrecht</li>
+      <li>Schnelle Erstattung bei Rückgaben</li>
+      <li>Kompetente Beratung</li>
+    </ul>
+
+    <h2>Kontakt</h2>
+    <p>E-Mail: <a href="mailto:[BITTE EINTRAGEN]">[BITTE EINTRAGEN]</a><br>
+    Telefon: [BITTE EINTRAGEN]</p>
+
+    <hr>
+    <p><small>bytinytes – Ihr vertrauensvoller Partner für Uhren, LEGO®, Games und mehr.</small></p>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Seite: Über uns",
+  "tag": "section",
+  "class": "section",
+  "settings": [
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "Abstand oben",
+      "default": 36
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "Abstand unten",
+      "default": 36
+    }
+  ]
+}
+{% endschema %}

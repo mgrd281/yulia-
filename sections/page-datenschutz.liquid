@@ -1,0 +1,93 @@
+{{ 'section-main-page.css' | asset_url | stylesheet_tag }}
+
+{%- style -%}
+  .section-{{ section.id }}-padding {
+    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+  }
+  @media screen and (min-width: 750px) {
+    .section-{{ section.id }}-padding {
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+  }
+{%- endstyle -%}
+
+<div class="page-width page-width--narrow section-{{ section.id }}-padding">
+  <h1 class="main-page-title page-title h0">Datenschutzerklärung</h1>
+  <div class="rte">
+    <h2>1. Verantwortlicher</h2>
+    <p><strong>[BITTE EINTRAGEN: Firma/Rechtsform]</strong><br>
+    [BITTE EINTRAGEN: Anschrift]<br>
+    E-Mail: <a href="mailto:[BITTE EINTRAGEN]">[BITTE EINTRAGEN]</a><br>
+    Telefon: [BITTE EINTRAGEN]</p>
+
+    <h2>2. Grundsätzliches zur Datenverarbeitung</h2>
+    <p>Wir nehmen den Schutz Ihrer persönlichen Daten sehr ernst. Die Verarbeitung personenbezogener Daten erfolgt gemäß der Datenschutz-Grundverordnung (DSGVO) und dem Bundesdatenschutzgesetz (BDSG).</p>
+
+    <h2>3. Rechtsgrundlagen der Verarbeitung</h2>
+    <ul>
+      <li><strong>Art. 6 Abs. 1 lit. a DSGVO:</strong> Einwilligung</li>
+      <li><strong>Art. 6 Abs. 1 lit. b DSGVO:</strong> Vertragserfüllung</li>
+      <li><strong>Art. 6 Abs. 1 lit. c DSGVO:</strong> Rechtliche Verpflichtung</li>
+      <li><strong>Art. 6 Abs. 1 lit. f DSGVO:</strong> Berechtigtes Interesse</li>
+    </ul>
+
+    <h2>4. Datenverarbeitung bei Nutzung unseres Shops</h2>
+    <h3>4.1 Hosting</h3>
+    <p>Unser Shop wird bei <strong>Shopify Inc.</strong> (150 Elgin Street, Ottawa, ON K2P 1L4, Kanada) gehostet. Shopify verarbeitet Daten als Auftragsverarbeiter gemäß Art. 28 DSGVO.</p>
+
+    <h3>4.2 Bestellvorgang</h3>
+    <p>Bei einer Bestellung erheben wir: Name, Adresse, E-Mail, Telefon (optional), Zahlungsinformationen.</p>
+
+    <h2>5. Cookies und Tracking</h2>
+    <h3>5.1 Essenzielle Cookies</h3>
+    <ul>
+      <li>Warenkorb-Cookie</li>
+      <li>Sitzungs-Cookie</li>
+      <li>CSRF-Token (Sicherheit)</li>
+    </ul>
+
+    <h3>5.2 Marketing/Analytics Cookies</h3>
+    <p>Mit Ihrer Einwilligung verwenden wir: [BITTE EINTRAGEN: z.B. Google Analytics, Facebook Pixel]</p>
+
+    <h2>6. Ihre Rechte</h2>
+    <p>Auskunft, Berichtigung, Löschung, Einschränkung, Datenübertragbarkeit, Widerspruch.</p>
+
+    <h2>7. Kontakt Datenschutz</h2>
+    <p>E-Mail: <a href="mailto:[BITTE EINTRAGEN]">[BITTE EINTRAGEN]</a></p>
+
+    <hr>
+    <p><small>Stand: [DATUM EINTRAGEN] | bytinytes</small></p>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Seite: Datenschutz",
+  "tag": "section",
+  "class": "section",
+  "settings": [
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "Abstand oben",
+      "default": 36
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "Abstand unten",
+      "default": 36
+    }
+  ]
+}
+{% endschema %}

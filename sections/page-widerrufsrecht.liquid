@@ -1,0 +1,76 @@
+{{ 'section-main-page.css' | asset_url | stylesheet_tag }}
+
+{%- style -%}
+  .section-{{ section.id }}-padding {
+    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+  }
+  @media screen and (min-width: 750px) {
+    .section-{{ section.id }}-padding {
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+  }
+{%- endstyle -%}
+
+<div class="page-width page-width--narrow section-{{ section.id }}-padding">
+  <h1 class="main-page-title page-title h0">Widerrufsrecht</h1>
+  <div class="rte">
+    <h2>Widerrufsbelehrung</h2>
+    <p>Sie haben das Recht, binnen vierzehn Tagen ohne Angabe von Gründen diesen Vertrag zu widerrufen.</p>
+    <p>Die Widerrufsfrist beträgt <strong>vierzehn Tage</strong> ab dem Tag, an dem Sie die Waren in Besitz genommen haben.</p>
+    <p>Um Ihr Widerrufsrecht auszuüben, müssen Sie uns ([BITTE EINTRAGEN: Firma, Anschrift, E-Mail]) mittels einer eindeutigen Erklärung über Ihren Entschluss informieren.</p>
+
+    <h2>Folgen des Widerrufs</h2>
+    <p>Wir erstatten alle Zahlungen innerhalb von vierzehn Tagen. Für die Rückzahlung verwenden wir dasselbe Zahlungsmittel, das Sie bei der ursprünglichen Transaktion eingesetzt haben.</p>
+    <p>Sie haben die Waren unverzüglich und in jedem Fall spätestens binnen vierzehn Tagen ab dem Tag der Widerrufsanzeige an uns zurückzusenden.</p>
+    <p><strong>Sie tragen die unmittelbaren Kosten der Rücksendung.</strong></p>
+
+    <h2>Ausschlüsse</h2>
+    <p>Das Widerrufsrecht besteht nicht bei: versiegelten Software/Games nach Entfernung der Versiegelung, digitalen Inhalten nach Download/Aktivierung, personalisierten Waren.</p>
+
+    <h2>Muster-Widerrufsformular</h2>
+    <p>(Wenn Sie den Vertrag widerrufen wollen, füllen Sie bitte dieses Formular aus)</p>
+    <p>An<br><strong>[BITTE EINTRAGEN: Firma, Anschrift]</strong><br>E-Mail: [BITTE EINTRAGEN]</p>
+    <p>Hiermit widerrufe(n) ich/wir (*) den Vertrag über den Kauf folgender Waren (*)</p>
+    <p>Bestellt am: ____________ / Erhalten am: ____________</p>
+    <p>Name: _________________________________________</p>
+    <p>Anschrift: _____________________________________</p>
+    <p>Unterschrift: __________________________________ (nur bei Papier)</p>
+    <p>Datum: _______________________________________</p>
+    <p><small>(*) Unzutreffendes streichen</small></p>
+
+    <hr>
+    <p><small>Stand: [DATUM EINTRAGEN] | bytinytes</small></p>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Seite: Widerrufsrecht",
+  "tag": "section",
+  "class": "section",
+  "settings": [
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "Abstand oben",
+      "default": 36
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "Abstand unten",
+      "default": 36
+    }
+  ]
+}
+{% endschema %}

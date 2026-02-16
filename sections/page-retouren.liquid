@@ -1,0 +1,83 @@
+{{ 'section-main-page.css' | asset_url | stylesheet_tag }}
+
+{%- style -%}
+  .section-{{ section.id }}-padding {
+    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+  }
+  @media screen and (min-width: 750px) {
+    .section-{{ section.id }}-padding {
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+  }
+{%- endstyle -%}
+
+<div class="page-width page-width--narrow section-{{ section.id }}-padding">
+  <h1 class="main-page-title page-title h0">Retouren & Umtausch</h1>
+  <div class="rte">
+    <h2>Ihr Widerrufsrecht</h2>
+    <p>14 Tage Widerrufsrecht ab Warenerhalt. <a href="/pages/widerrufsrecht">Details →</a></p>
+
+    <h2>Rückgabebedingungen</h2>
+    <ul>
+      <li>Rückgabe innerhalb von 14 Tagen</li>
+      <li>Ware unbenutzt und im Originalzustand</li>
+      <li>Originalverpackung (OVP) vorhanden</li>
+      <li>Bei Games: Versiegelung nicht entfernt</li>
+    </ul>
+
+    <h2>Rückgabe-Ablauf</h2>
+    <h3>Schritt 1: Anmelden</h3>
+    <p>E-Mail an <a href="mailto:[BITTE EINTRAGEN]">[BITTE EINTRAGEN]</a> mit Bestellnummer.</p>
+
+    <h3>Schritt 2: Verpacken</h3>
+    <p>Ware sicher in Originalverpackung packen.</p>
+
+    <h3>Schritt 3: Versenden</h3>
+    <p>Senden Sie an:<br>
+    <strong>[BITTE EINTRAGEN: Rücksendeadresse]</strong></p>
+
+    <h2>Erstattung</h2>
+    <p>Innerhalb von 14 Tagen nach Wareneingang auf Ihr ursprüngliches Zahlungsmittel.</p>
+
+    <h2>Ausnahmen</h2>
+    <p>Vom Widerrufsrecht ausgeschlossen: versiegelte Software nach Öffnung, digitale Keys nach Einlösung.</p>
+
+    <h2>Kontakt</h2>
+    <p>E-Mail: <a href="mailto:[BITTE EINTRAGEN]">[BITTE EINTRAGEN]</a></p>
+
+    <hr>
+    <p><small>Stand: [DATUM EINTRAGEN] | bytinytes</small></p>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Seite: Retouren & Umtausch",
+  "tag": "section",
+  "class": "section",
+  "settings": [
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "Abstand oben",
+      "default": 36
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "Abstand unten",
+      "default": 36
+    }
+  ]
+}
+{% endschema %}
