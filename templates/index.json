@@ -12,8 +12,27 @@
     "slideshow": {
       "type": "slideshow",
       "blocks": {
+        "slide_PXd7DC": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/Plan_fuer_Website.png",
+            "image_overlay_opacity": 0,
+            "heading": "Slideshow",
+            "heading_size": "h1",
+            "subheading": "Erzähle deine Geschichte mit Fotos",
+            "button_label": "Schaltflächenbeschriftung",
+            "link": "",
+            "button_style_secondary": false,
+            "show_text_box": true,
+            "box_align": "middle-center",
+            "text_alignment": "center",
+            "text_alignment_mobile": "center",
+            "color_scheme": ""
+          }
+        },
         "slide-0": {
           "type": "slide",
+          "disabled": true,
           "settings": {
             "image": "shopify://shop_images/Plan_fuer_Website.png",
             "image_overlay_opacity": 0,
@@ -32,6 +51,7 @@
         }
       },
       "block_order": [
+        "slide_PXd7DC",
         "slide-0"
       ],
       "settings": {
@@ -78,24 +98,6 @@
     "slideshow_Xyagyn": {
       "type": "slideshow",
       "blocks": {
-        "slide_Qjmm4b": {
-          "type": "slide",
-          "settings": {
-            "image": "shopify://shop_images/Plan_fuer_Website.png",
-            "image_overlay_opacity": 0,
-            "heading": "Slideshow",
-            "heading_size": "h1",
-            "subheading": "Erzähle deine Geschichte mit Fotos",
-            "button_label": "Schaltflächenbeschriftung",
-            "link": "",
-            "button_style_secondary": false,
-            "show_text_box": true,
-            "box_align": "middle-center",
-            "text_alignment": "center",
-            "text_alignment_mobile": "center",
-            "color_scheme": ""
-          }
-        },
         "slide_BhCnxE": {
           "type": "slide",
           "settings": {
@@ -115,7 +117,6 @@
         }
       },
       "block_order": [
-        "slide_Qjmm4b",
         "slide_BhCnxE"
       ],
       "name": "t:sections.slideshow.presets.name",
