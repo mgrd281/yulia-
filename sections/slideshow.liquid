@@ -147,13 +147,13 @@
               {{
                 block.settings.image
                 | image_url: width: 3840
-                | image_tag: height: height, sizes: sizes, widths: widths, fetchpriority: fetch_priority
+                | image_tag: height: height, sizes: sizes, widths: widths, fetchpriority: fetch_priority, class: 'slideshow-image', style: 'object-fit:' | append: section.settings.image_fit | append: ';object-position:' | append: section.settings.image_position | append: ';'
               }}
             {%- else -%}
               {{
                 block.settings.image
                 | image_url: width: 3840
-                | image_tag: loading: 'lazy', height: height, sizes: sizes, widths: widths
+                | image_tag: loading: 'lazy', height: height, sizes: sizes, widths: widths, class: 'slideshow-image', style: 'object-fit:' | append: section.settings.image_fit | append: ';object-position:' | append: section.settings.image_position | append: ';'
               }}
             {%- endif -%}
           {%- else -%}
