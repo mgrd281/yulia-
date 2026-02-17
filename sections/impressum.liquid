@@ -1,0 +1,284 @@
+{{ 'section-premium-impressum.css' | asset_url | stylesheet_tag }}
+
+{%- style -%}
+  .section-{{ section.id }}-padding {
+    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+  }
+
+  @media screen and (min-width: 750px) {
+    .section-{{ section.id }}-padding {
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+  }
+{%- endstyle -%}
+
+<div class="premium-impressum section-{{ section.id }}-padding color-{{ section.settings.color_scheme }}">
+  <div class="page-width">
+    
+    {%- if section.settings.heading != blank -%}
+      <div class="premium-impressum__header">
+        <h1 class="premium-impressum__title">{{ section.settings.heading | escape }}</h1>
+        <p class="premium-impressum__subtitle">Rechtliche Informationen und Pflichtangaben gemäß § 5 TMG</p>
+      </div>
+    {%- endif -%}
+
+    <div class="premium-impressum__grid">
+      
+      {%- comment -%}Left: Main Content{%- endcomment -%}
+      <div class="premium-impressum__content">
+        
+        <div class="premium-impressum__section">
+          <h2 class="premium-impressum__section-title">
+            <svg class="premium-impressum__section-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
+              <circle cx="12" cy="7" r="4"/>
+            </svg>
+            Unternehmen
+          </h2>
+          <div class="premium-impressum__card">
+            <p class="premium-impressum__company">Karinex Digital Solutions GmbH</p>
+            <p class="premium-impressum__note">(fiktives Unternehmen – Demonstrationszweck)</p>
+          </div>
+        </div>
+
+        <div class="premium-impressum__section">
+          <h2 class="premium-impressum__section-title">
+            <svg class="premium-impressum__section-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+              <circle cx="12" cy="10" r="3"/>
+            </svg>
+            Anschrift
+          </h2>
+          <div class="premium-impressum__card">
+            <address class="premium-impressum__address">
+              Musterstraße 25<br>
+              12345 Musterstadt<br>
+              Deutschland
+            </address>
+          </div>
+        </div>
+
+        <div class="premium-impressum__section">
+          <h2 class="premium-impressum__section-title">
+            <svg class="premium-impressum__section-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+            </svg>
+            Kontakt
+          </h2>
+          <div class="premium-impressum__card">
+            <div class="premium-impressum__contact-item">
+              <span class="premium-impressum__label">Telefon:</span>
+              <a href="tel:+493000000000" class="premium-impressum__link">+49 30 00000000</a>
+            </div>
+            <div class="premium-impressum__contact-item">
+              <span class="premium-impressum__label">E-Mail:</span>
+              <a href="mailto:info@karinex-demo.de" class="premium-impressum__link">info@karinex-demo.de</a>
+            </div>
+            <div class="premium-impressum__contact-item">
+              <span class="premium-impressum__label">Website:</span>
+              <a href="https://www.karinex-demo.de" class="premium-impressum__link" target="_blank" rel="noopener">www.karinex-demo.de</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="premium-impressum__section">
+          <h2 class="premium-impressum__section-title">
+            <svg class="premium-impressum__section-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+              <polyline points="14,2 14,8 20,8"/>
+              <line x1="16" y1="13" x2="8" y2="13"/>
+              <line x1="16" y1="17" x2="8" y2="17"/>
+              <polyline points="10,9 9,9 8,9"/>
+            </svg>
+            Vertretung
+          </h2>
+          <div class="premium-impressum__card">
+            <p class="premium-impressum__text">Vertreten durch die Geschäftsführung: <strong>Max Mustermann</strong></p>
+          </div>
+        </div>
+
+        <div class="premium-impressum__section">
+          <h2 class="premium-impressum__section-title">
+            <svg class="premium-impressum__section-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <rect x="3" y="4" width="18" height="18" rx="2" ry="2"/>
+              <line x1="16" y1="2" x2="16" y2="6"/>
+              <line x1="8" y1="2" x2="8" y2="6"/>
+              <line x1="3" y1="10" x2="21" y2="10"/>
+            </svg>
+            Registereintrag
+          </h2>
+          <div class="premium-impressum__card">
+            <p class="premium-impressum__text">Eintragung im Handelsregister (fiktiv)</p>
+            <div class="premium-impressum__contact-item">
+              <span class="premium-impressum__label">Registergericht:</span>
+              <span>Amtsgericht Musterstadt</span>
+            </div>
+            <div class="premium-impressum__contact-item">
+              <span class="premium-impressum__label">Registernummer:</span>
+              <span>HRB 123456</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="premium-impressum__section">
+          <h2 class="premium-impressum__section-title">
+            <svg class="premium-impressum__section-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <line x1="12" y1="1" x2="12" y2="23"/>
+              <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>
+            </svg>
+            Umsatzsteuer-ID
+          </h2>
+          <div class="premium-impressum__card">
+            <p class="premium-impressum__text">Umsatzsteuer-Identifikationsnummer gemäß §27 a Umsatzsteuergesetz:</p>
+            <p class="premium-impressum__vat">DE000000000</p>
+            <p class="premium-impressum__note">(fiktiv)</p>
+          </div>
+        </div>
+
+        <div class="premium-impressum__section">
+          <h2 class="premium-impressum__section-title">
+            <svg class="premium-impressum__section-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+            </svg>
+            Inhaltsverantwortung
+          </h2>
+          <div class="premium-impressum__card">
+            <p class="premium-impressum__text">Verantwortlich für den Inhalt nach § 55 Abs. 2 MStV:</p>
+            <address class="premium-impressum__address">
+              Max Mustermann<br>
+              Musterstraße 25<br>
+              12345 Musterstadt
+            </address>
+          </div>
+        </div>
+
+      </div>
+
+      {%- comment -%}Right: Sidebar{%- endcomment -%}
+      <div class="premium-impressum__sidebar">
+        
+        <div class="premium-impressum__sidebar-section">
+          <h3 class="premium-impressum__sidebar-title">Rechtliche Hinweise</h3>
+          
+          <details class="premium-impressum__disclaimer">
+            <summary class="premium-impressum__disclaimer-summary">
+              <span>Haftungsausschluss</span>
+              <svg class="premium-impressum__disclaimer-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <polyline points="6,9 12,15 18,9"/>
+              </svg>
+            </summary>
+            <div class="premium-impressum__disclaimer-content">
+              <h4>Haftung für Inhalte</h4>
+              <p>Die Inhalte unserer Seiten wurden mit größter Sorgfalt erstellt. Für die Richtigkeit, Vollständigkeit und Aktualität der Inhalte können wir jedoch keine Gewähr übernehmen. Dieses Impressum dient ausschließlich Demonstrationszwecken im Rahmen einer Abschlusspräsentation.</p>
+              
+              <h4>Haftung für Links</h4>
+              <p>Unsere Präsentation kann Links zu externen Websites Dritter enthalten, auf deren Inhalte wir keinen Einfluss haben. Deshalb können wir für diese fremden Inhalte auch keine Gewähr übernehmen.</p>
+              
+              <h4>Urheberrecht</h4>
+              <p>Alle dargestellten Inhalte, Texte und Grafiken sind ausschließlich für Schulungs- und Präsentationszwecke erstellt worden.</p>
+            </div>
+          </details>
+        </div>
+
+        <div class="premium-impressum__sidebar-section premium-impressum__sidebar-section--warning">
+          <div class="premium-impressum__warning">
+            <svg class="premium-impressum__warning-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/>
+              <line x1="12" y1="9" x2="12" y2="13"/>
+              <line x1="12" y1="17" x2="12.01" y2="17"/>
+            </svg>
+            <div>
+              <strong>Hinweis</strong>
+              <p>Dieses Unternehmen existiert nicht. Sämtliche Angaben sind frei erfunden und dienen ausschließlich zu Ausbildungs- bzw. Präsentationszwecken.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="premium-impressum__sidebar-section">
+          <h3 class="premium-impressum__sidebar-title">Schnelllinks</h3>
+          <ul class="premium-impressum__links">
+            <li><a href="/pages/datenschutz">Datenschutz</a></li>
+            <li><a href="/pages/agb">AGB</a></li>
+            <li><a href="/pages/widerrufsrecht">Widerrufsrecht</a></li>
+            <li><a href="/pages/kontakt">Kontakt</a></li>
+          </ul>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Impressum",
+  "tag": "section",
+  "class": "section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "default": "Impressum",
+      "label": "Überschrift"
+    },
+    {
+      "type": "select",
+      "id": "heading_size",
+      "options": [
+        {
+          "value": "h2",
+          "label": "t:sections.all.heading_size.options__1.label"
+        },
+        {
+          "value": "h1",
+          "label": "t:sections.all.heading_size.options__2.label"
+        },
+        {
+          "value": "h0",
+          "label": "t:sections.all.heading_size.options__3.label"
+        }
+      ],
+      "default": "h1",
+      "label": "t:sections.all.heading_size.label"
+    },
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "t:sections.all.colors.label",
+      "default": "scheme-1"
+    },
+    {
+      "type": "header",
+      "content": "t:sections.all.spacing"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_top",
+      "default": 36
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_bottom",
+      "default": 36
+    }
+  ],
+  "presets": [
+    {
+      "name": "Impressum"
+    }
+  ]
+}
+{% endschema %}
